@@ -8,6 +8,7 @@ public class Personajes {
     private int ataque;
     private int defensa;
     private boolean vivo;
+    private double triunfo = 0;
 
     public Personajes(String nombre, int nivel, int vida, int ataque, int defensa) {
         this.nombre = nombre;
@@ -63,5 +64,23 @@ public class Personajes {
 
     public void setVivo(boolean vivo) {
         this.vivo = vivo;
+    }
+
+    public double getTriunfo() {
+        return triunfo;
+    }
+
+    public void setTriunfo(double triunfo) {
+        this.triunfo = triunfo;
+    }
+
+    public void subirNivel() {
+        double niveles = getTriunfo()/5;
+        int parteEntera = (int) niveles;
+        setNivel(parteEntera);
+    }
+
+    public void verNivel() {
+        System.out.println("El nivel de " + this.getNombre() + " es " + this.getNivel());
     }
 }
